@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceModels\FinanceModels.csproj" />
+    <ProjectReference Include="..\FinanceShared\FinanceShared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FinanceModels">
+      <HintPath>..\FinanceModels\bin\Debug\net8.0\FinanceModels.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

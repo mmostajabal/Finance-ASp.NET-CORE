@@ -1,0 +1,29 @@
+﻿@model List<PartnersDTO>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <table class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th class="col-6">Partner Id</th>
+                <th class="col-3">ParentId</th>
+                <th class="col-3">Fee Percent</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PartnersDTO partner in Model)
+            {
+                <tr>
+                    <td>@partner.Partner_Id</td>
+                    <td>@partner.Parent_Partner_Id</td>
+                    <td>@partner.Fee_Percent</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+

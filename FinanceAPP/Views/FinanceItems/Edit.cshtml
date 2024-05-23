@@ -1,0 +1,44 @@
+﻿@model FinancialItemsDTO
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FinancialId"/>
+            <div class="form-group">
+                <label asp-for="PARTNER_ID" class="control-label"></label>
+                <select asp-for="PARTNER_ID" class="form-control" asp-items="@(new SelectList(ViewBag.PartnerList, "Value", "Text"))"></select>
+                <span asp-validation-for="PARTNER_ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" type="date" max="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary mx-3 mt-3 p-2">
+                    <i class="bi bi-pencil-square"></i> Update
+                </button>
+                <a asp-action="FinancialItem" class="btn btn-secondary mt-3 p-2">
+                    <i class="bi bi-arrow-return-left"></i> Return
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+

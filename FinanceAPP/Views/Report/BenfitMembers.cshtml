@@ -1,0 +1,26 @@
+﻿@model List<PartnerFinancialItemDTO>
+@{
+    ViewData["Title"] = "Benfit Member";
+}
+
+<div class="container">
+    <table class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th class="col-4 offset-3">Patner Id</th>
+                <th class="col-2 offset-3">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PartnerFinancialItemDTO totalMember in Model)
+            {
+                <tr>
+                    <td>@totalMember.Parent_Partner_Id</td>
+                    <td>@totalMember.Amount</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

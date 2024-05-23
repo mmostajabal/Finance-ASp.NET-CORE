@@ -1,0 +1,40 @@
+﻿@model IList<FinancialItemsDTO>
+@{
+    ViewData["Title"] = "FinancialItem";
+    
+}
+
+<div class="container">
+    <div class="text-end">
+        <a asp-controller="FinanceItems" asp-action="Create" class="btn btn-primary mb-3"><i class="bi bi-plus-circle"></i> Create</a>
+    </div>
+    <table class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th class="col-5">Patner Id</th>
+                <th class="col-2">Amount</th>
+                <th class="col-2">Date</th>
+                <th class="col-3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (FinancialItemsDTO financialItem in Model)
+            {
+                <tr>
+                    <td>@financialItem.PARTNER_ID</td>
+                    <td>@financialItem.Amount</td>
+                    <td>@financialItem.Date.ToString("yyyy-MM-dd")</td>
+                    <td>
+
+                        <a asp-action="Edit" asp-route-financialId="@financialItem.FinancialId">Edit</a> |
+                        <a asp-action="Details" asp-route-financialId="@financialItem.FinancialId">Details</a> |
+                        <a asp-action="Delete" asp-route-financialId="@financialItem.FinancialId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceService\FinanceService.csproj" />
+    <ProjectReference Include="..\FinanceShared\FinanceShared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logs\" />
+    <Folder Include="wwwroot\financeitem\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FinanceShared">
+      <HintPath>..\FinanceShared\bin\Debug\net8.0\FinanceShared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
